@@ -19,6 +19,7 @@ Find all URLs in a directory that start with `https://`, and replace them with
 - [Usage](#usage)
   - [Search](#search)
   - [Fix](#fix)
+  - [Options](#options)
 - [Contributing](#contributing)
 - [License](#license)
 
