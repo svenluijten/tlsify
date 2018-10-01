@@ -50,9 +50,9 @@ This will output a table like the one below:
 +-----------------+---------------------+--------------+
 | Domain Name     | Insecure References | Supports TLS |
 +-----------------+---------------------+--------------+
-| google.com      | 17                  | ✔           |
-| httpforever.com | 39                  | ✔           |
-| zombo.com       | 4                   | ✘           |
+| google.com      | 17                  | ✔            |
+| httpforever.com | 39                  | ✔            |
+| zombo.com       | 4                   | ✘            |
 +-----------------+---------------------+--------------+
 ```
 
