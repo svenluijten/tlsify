@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   test_7.1:
-    working_directory: ~/tlsify
+    working_directory: ~/tls-checker
     docker:
       - image: circleci/php:7.1-cli
     steps:
@@ -12,7 +12,7 @@ jobs:
       - run: ./vendor/bin/phpunit
 
   test_7.2:
-    working_directory: ~/tlsify
+    working_directory: ~/tls-checker
     docker:
     - image: circleci/php:7.2-cli
     steps:

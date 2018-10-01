@@ -1,6 +1,6 @@
-![tlsify](:hero)
+![tls-checker](:hero)
 
-# tlsify
+# tls-checker
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -30,10 +30,10 @@ You'll have to follow a simple step to install this package.
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer global require sven/tlsify
+$ composer global require sven/tls-checker
 ```
 
-You should now be able to run the `tlsify` command from anywhere on your system. 
+You should now be able to run the `tls-checker` command from anywhere on your system. 
 
 ## Usage
 Using the package is outlined below.
@@ -42,7 +42,7 @@ Using the package is outlined below.
 You can use the `search` command to search for all insecure URLs in the `src/` directory:
 
 ```bash
-$ tlsify search src/
+$ tls-checker search src/
 ```
 
 This will output a table like the one below:
@@ -58,11 +58,11 @@ This will output a table like the one below:
 ```
 
 You may optionally specify the `--quiet` option to easily integrate this tool into some
-automation. This will make `tlsify` exit with exit code `0` if no (fixable) insecure URLs
+automation. This will make `tls-checker` exit with exit code `0` if no (fixable) insecure URLs
 could be found, and exit with code `1` if one or more violations were found.
 
 ```bash
-$ tlsify search src/ --quiet
+$ tls-checker search src/ --quiet
 ```
 
 ### Fix
@@ -70,7 +70,7 @@ You may not just want to search for references, but also fix them immediately. T
 use the `fix` command:
 
 ```bash
-$ tlsify fix src/
+$ tls-checker fix src/
     Fixing 56 insecure URLs...
     Successfully fixed 56 insecure URLs
 ```
@@ -84,7 +84,7 @@ searching or replacing insecure URLs. Default: `localhost`, `(.+)\.test`, `(.+)\
 `(.+)\.invalid`, and `(.+)\.example` (per [RFC 2606](https://tools.ietf.org/html/rfc2606#section-2)).
 
 ```bash
-$ tlsify search src/ --exclude=localhost --exclude=httpforever.com
+$ tls-checker search src/ --exclude=localhost --exclude=httpforever.com
 ```
 
 #### `--timeout`
@@ -93,7 +93,7 @@ milliseconds. Default: `2000` (2 seconds).
 
 ```bash
 # Wait for a response from HTTPS for 10 seconds before moving on.
-$ tlsify fix src/ --timeout=10000
+$ tls-checker fix src/ --timeout=10000
 ```
 
 ## Contributing
@@ -102,16 +102,16 @@ welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
 though. See the [contributors page](../../graphs/contributors) for all contributors.
 
 ## License
-`sven/tlsify` is licensed under the MIT License (MIT). Please see the
+`sven/tls-checker` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sven/tlsify.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sven/tls-checker.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sven/tlsify.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/tlsify.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sven/tls-checker.svg?style=flat-square
+[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/tls-checker.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/151132159/shield
 
-[link-packagist]: https://packagist.org/packages/sven/tlsify
-[link-downloads]: https://packagist.org/packages/sven/tlsify
-[link-circleci]: https://circleci.com/gh/svenluijten/tlsify
+[link-packagist]: https://packagist.org/packages/sven/tls-checker
+[link-downloads]: https://packagist.org/packages/sven/tls-checker
+[link-circleci]: https://circleci.com/gh/svenluijten/tls-checker
 [link-styleci]: https://styleci.io/repos/151132159

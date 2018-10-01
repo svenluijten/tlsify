@@ -1,5 +1,5 @@
 {
-    "name": "sven/tlsify",
+    "name": "sven/tls-checker",
     "description": "Find and replace all insecure links in a directory with HTTPS",
     "keywords": ["https", "links", "urls", "secure", "insecure", "automatic", "cli"],
     "license": "MIT",
@@ -13,6 +13,7 @@
     "require": {
         "php": "^7.1",
         "spatie/regex": "^1.3",
+        "symfony/console": "^4.1",
         "symfony/finder": "^4.1"
     },
     "require-dev": {
@@ -20,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sven\\Tlsify\\": "src/"
+            "Sven\\TlsChecker\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sven\\Tlsify\\Tests\\": "tests/"
+            "Sven\\TlsChecker\\Tests\\": "tests/"
         }
     },
     "config": {

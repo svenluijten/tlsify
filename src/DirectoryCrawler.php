@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\Tlsify;
+namespace Sven\TlsChecker;
 
 use Symfony\Component\Finder\Finder;
 

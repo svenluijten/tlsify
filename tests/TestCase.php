@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\Tlsify\Tests;
+namespace Sven\TlsChecker\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

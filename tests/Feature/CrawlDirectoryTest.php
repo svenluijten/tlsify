@@ -1,10 +1,10 @@
 <?php
 
-namespace Sven\Tlsify\Tests\Feature;
+namespace Sven\TlsChecker\Tests\Feature;
 
-use Sven\Tlsify\DirectoryCrawler;
-use Sven\Tlsify\Regex;
-use Sven\Tlsify\Tests\TestCase;
+use Sven\TlsChecker\DirectoryCrawler;
+use Sven\TlsChecker\Regex;
+use Sven\TlsChecker\Tests\TestCase;
 
 class CrawlDirectoryTest extends TestCase
 {
