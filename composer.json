@@ -1,7 +1,7 @@
 {
-    "name": "sven/:package",
-    "description": "",
-    "keywords": [],
+    "name": "sven/tlsify",
+    "description": "Find and replace all insecure links in a directory with HTTPS",
+    "keywords": ["https", "links", "urls", "secure", "insecure", "automatic", "cli"],
     "license": "MIT",
     "authors": [
         {
@@ -14,29 +14,19 @@
         "php": "^7.1"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^4.0"
+        "phpunit/phpunit": "^7.3"
     },
     "autoload": {
         "psr-4": {
-            "Sven\\:namespace\\": "src/"
+            "Sven\\Tlsify\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sven\\:namespace\\Tests\\": "tests/"
+            "Sven\\Tlsify\\Tests\\": "tests/"
         }
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Sven\\:namespace\\ServiceProvider"
-            ],
-            "aliases": {
-                ":namespace": "Sven\\:namespace\\Facades\\:namespace"
-            }
-        }
     }
 }

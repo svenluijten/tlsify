@@ -1,6 +1,6 @@
-![:package](:hero)
+![tlsify](:hero)
 
-# :package
+# tlsify
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -8,67 +8,71 @@
 [![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
-Short description of the package. What does it do and why should people download
-it? Brag a bit but don't exaggerate. Talk about what's to come and tease small
-pieces of functionality.
+Find all URLs in a directory that start with `https://`, and replace them with 
+`https://` (if supported) in one fell swoop.
 
-> :namespace
-> :package
 > :styleci
 > :hero
-
 
 ## Index
 - [Installation](#installation)
   - [Downloading](#downloading)
-  - [Registering the service provider](#registering-the-service-provider)
 - [Usage](#usage)
+  - [Search](#search)
+  - [Fix](#fix)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
-You'll have to follow a couple of simple steps to install this package.
+You'll have to follow a simple step to install this package.
 
 ### Downloading
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer require sven/:package
+$ composer global require sven/tlsify
 ```
 
-Or add the package to your dependencies in `composer.json` and run
-`composer update` on the command line to download the package:
-
-```json
-{
-    "require": {
-        "sven/:package": "*"
-    }
-}
-```
-
-
-### Registering the service provider
-> Is this a Laravel package?
-
-Next, add the `ServiceProvider` to your `providers` array in `config/app.php`:
-
-```php
-'providers' => [
-    ...
-    Sven\:namespace\ServiceProvider::class,
-];
-```
-
-If you would like to load this package in certain environments only, take a look
-at [sven/env-providers](https://github.com/svenluijten/env-providers).
+You should now be able to run the `tlsify` command from anywhere on your system. 
 
 ## Usage
-Some examples of the code. How should people use it, what options does this package
-provide? Should people be wary of some functionality?
+Using the package is outlined below.
 
-```php
-Maybe some code?
+### Search
+You can use the `search` command to search for all insecure URLs in the `src/` directory:
+
+```bash
+$ tlsify search src/
+```
+
+This will output a table like the one below:
+
+```
++-----------------+---------------------+--------------+
+| Domain Name     | Insecure References | Supports TLS |
++-----------------+---------------------+--------------+
+| google.com      | 17                  | ✔           |
+| httpforever.com | 39                  | ✔           |
+| zombo.com       | 4                   | ❌           |
++-----------------+---------------------+--------------+
+```
+
+You may optionally specify the `--quiet` option to easily integrate this tool into some
+automation. This will make `tlsify` exit with exit code `0` if no (fixable) insecure URLs
+could be found, and exit with code `1` if one or more violations were found.
+
+```bash
+$ tlsify search src/ --quiet
+```
+
+### Fix
+You may not just want to search for references, but also fix them immediately. To do so,
+use the `fix` command:
+
+```bash
+$ tlsify fix src/
+    Fixing 56 insecure URLs...
+    Successfully fixed 56 insecure URLs
 ```
 
 ## Contributing
@@ -77,16 +81,16 @@ welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
 though. See the [contributors page](../../graphs/contributors) for all contributors.
 
 ## License
-`sven/:package` is licensed under the MIT License (MIT). Please see the
+`sven/tlsify` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sven/:package.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sven/tlsify.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sven/:package.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/:package.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sven/tlsify.svg?style=flat-square
+[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/tlsify.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/:styleci/shield
 
-[link-packagist]: https://packagist.org/packages/sven/:package
-[link-downloads]: https://packagist.org/packages/sven/:package
-[link-circleci]: https://circleci.com/gh/svenluijten/:package
+[link-packagist]: https://packagist.org/packages/sven/tlsify
+[link-downloads]: https://packagist.org/packages/sven/tlsify
+[link-circleci]: https://circleci.com/gh/svenluijten/tlsify
 [link-styleci]: https://styleci.io/repos/:styleci
