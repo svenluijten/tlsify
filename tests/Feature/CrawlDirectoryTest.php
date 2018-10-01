@@ -30,4 +30,16 @@ class CrawlDirectoryTest extends TestCase
 
         $this->assertInternalType('iterable', $files);
     }
+
+    /** @test */
+    public function all_found_files_have_insecure_urls_in_them()
+    {
+        $path = $this->path(__DIR__.'/__stubs__/insecure_and_secure');
+
+        $files = DirectoryCrawler::find(Regex::HTTP_URL)->in($path);
+
+        foreach ($files as $file) {
+            $this->assertRegExp(Regex::HTTP_URL, $file->getContents());
+        }
+    }
 }

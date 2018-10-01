@@ -21,6 +21,12 @@ class DirectoryCrawler
         return new self($regex);
     }
 
+    /**
+     * @param string $path
+     * @param bool $asIterator
+     *
+     * @return \Symfony\Component\Finder\SplFileInfo[]|\Symfony\Component\Finder\Finder
+     */
     public function in(string $path, bool $asIterator = false)
     {
         $iterator = Finder::create()
