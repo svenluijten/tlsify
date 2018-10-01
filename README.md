@@ -8,8 +8,8 @@
 [![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
-Find all URLs in a directory that start with `https://`, and replace them with 
-`https://` (if supported) in one fell swoop.
+Find all insecure URLs in all files in a directory, and replace them with `https://` if 
+supported.
 
 > :hero
 
