@@ -53,7 +53,7 @@ This will output a table like the one below:
 +-----------------+---------------------+--------------+
 | google.com      | 17                  | ✔           |
 | httpforever.com | 39                  | ✔           |
-| zombo.com       | 4                   | ❌           |
+| zombo.com       | 4                   | ✘           |
 +-----------------+---------------------+--------------+
 ```
 
