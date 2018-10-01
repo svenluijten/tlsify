@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "spatie/regex": "^1.3",
         "symfony/finder": "^4.1"
     },
     "require-dev": {
