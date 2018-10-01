@@ -75,6 +75,27 @@ $ tlsify fix src/
     Successfully fixed 56 insecure URLs
 ```
 
+### Options
+There are several options that work for both the `search` and the `fix` commands:
+
+#### `--exclude`
+The `--exclude` option is an array of domains / PCRE patterns that should be ignored when 
+searching or replacing insecure URLs. Default: `localhost`, `(.+)\.test`, `(.+)\.localhost`, 
+`(.+)\.invalid`, and `(.+)\.example` (per [RFC 2606](https://tools.ietf.org/html/rfc2606#section-2)).
+
+```bash
+$ tlsify search src/ --exclude=localhost --exclude=httpforever.com
+```
+
+#### `--timeout`
+This option determines the timeout to use when checking if a domain supports HTTPS in
+milliseconds. Default: `2000` (2 seconds).
+
+```bash
+# Wait for a response from HTTPS for 10 seconds before moving on.
+$ tlsify fix src/ --timeout=10000
+```
+
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
 welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
